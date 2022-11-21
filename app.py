@@ -5,6 +5,7 @@ from tkinter import *
 import pygame as pg
 import about
 import webbrowser
+import homepage
 import os
 
 pg.init()
@@ -14,8 +15,7 @@ def aboutme():
     msg.showinfo("About Me",f"author: {about.author}\nversion: {about.version}\nemail: {about.email}\ncreated in: {about.created}")
 
 def homePage():
-    url = "https://github.com/Sahil-Rajwar-2004/Song-Gui"
-    webbrowser.open(url)
+    webbrowser.open(homepage.url)
 
 def manage(event):
     global isPause
@@ -70,7 +70,7 @@ def use():
 
 top = "None"
 app = Tk()
-app.geometry("700x350")
+app.geometry("700x150")
 app.title(f"Music-GUI-[{top}]")
 app.resizable(False,False)
 
@@ -98,8 +98,10 @@ songsBox.current(0)
 playBtn = Button(mainFrame,text = "play",font = ("ubuntu",9),width = 20,fg = "#ffffff",bg = "#000000",command = play)
 playBtn.grid(row = 0,column = 2,padx = 5,pady = 5)
 
-btnFrame = Frame(app,relief = GROOVE,bd = 5)
-btnFrame.pack(fill = BOTH,padx = 5,pady = 5)
+helpFrame = Frame(app)
+helpFrame.pack(fill = BOTH,padx = 5,pady = 5)
+helpLabel = Label(helpFrame,font = ("ubuntu",9),text = "press spacebar to pause/unpause the current playing song!")
+helpLabel.pack(fill = BOTH,padx = 5,pady = 5)
 
 app.bind("<space>",manage)
 app.bind("<Escape>",end)
