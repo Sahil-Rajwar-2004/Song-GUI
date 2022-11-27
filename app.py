@@ -34,7 +34,7 @@ def main():
     try:
         for i in range(0,len(files)):
             x = files[i].split(".")[1]
-            if (x == "mp3")|(x == "ogg")|(x == "wave"):
+            if (x == "mp3")|(x == "ogg")|(x == "wav"):
                 songs.append(files[i])
         songsBox["values"] = tuple(songs)
     except:
