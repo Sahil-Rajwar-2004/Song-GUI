@@ -34,7 +34,7 @@ def main():
     try:
         for i in range(0,len(files)):
             x = files[i].split(".")[1]
-            if x == "mp3":
+            if (x == "mp3")|(x == "ogg")|(x == "wave"):
                 songs.append(files[i])
         songsBox["values"] = tuple(songs)
     except:
@@ -81,9 +81,9 @@ menuBar.add_command(label = "About",command = aboutme)
 menuBar.add_command(label = "HomePage",command = homePage)
 menuBar.add_command(label = "Help",command = use)
 
-headingFrame = Frame(app,relief = GROOVE,bd = 5)
+headingFrame = Frame(app,relief = GROOVE,bd = 0)
 headingFrame.pack(fill = BOTH,padx = 5,pady = 5)
-headingLabel = Label(headingFrame,text = "Choose the songs!",font = ("ubuntu",16))
+headingLabel = Label(headingFrame,text = "Choose the songs!",font = ("ubuntu",16),bg = "gray")
 headingLabel.pack(fill = BOTH,padx = 5,pady = 5)
 mainFrame = Frame(app)
 mainFrame.pack(fill = BOTH,padx = 5,pady = 5)
@@ -100,11 +100,10 @@ playBtn.grid(row = 0,column = 2,padx = 5,pady = 5)
 
 helpFrame = Frame(app)
 helpFrame.pack(fill = BOTH,padx = 5,pady = 5)
-helpLabel = Label(helpFrame,font = ("ubuntu",9),text = "press spacebar to pause/unpause the current playing song!")
-helpLabel.pack(fill = BOTH,padx = 5,pady = 5)
+helpLabel = Label(helpFrame,font = ("ubuntu",9),text = "press spacebar to pause/unpause the current playing song!\npress escape button to stop the current song!")
+helpLabel.pack(fill = BOTH,padx = 5)
 
 app.bind("<space>",manage)
 app.bind("<Escape>",end)
 
 app.mainloop()
-
