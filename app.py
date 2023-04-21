@@ -12,7 +12,7 @@ pg.init()
 isPause = False
 
 def aboutme():
-    msg.showinfo("About Me",f"author: {about.author}\nversion: {about.version}\nemail: {about.email}\ncreated in: {about.created}")
+    msg.showinfo("About Me",f"author: {about.author}\nversion: {about.version}\ncreated in: {about.created}")
 
 def homePage():
     webbrowser.open(homepage.url)
