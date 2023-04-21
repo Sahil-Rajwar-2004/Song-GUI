@@ -66,7 +66,7 @@ def play():
         msg.showerror("Error","Select the file to play the songs!")
 
 def use():
-    msg.showinfo("How to Use?","1. Select the song from directory from top right corner\n2. Press spacebar to pause/unpause the current song!")
+    msg.showinfo("How to Use?","1. Select the song from directory from top left corner\n2. Press spacebar to pause/unpause the current song!")
 
 top = "None"
 app = Tk()
